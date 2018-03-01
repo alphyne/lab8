@@ -8,3 +8,12 @@ var data = {
 exports.adminView = function(req, res){
   res.render('rsvp', data);
 };
+
+exports.addRSVP = function(req, res) {
+	var email = req.body.rsvpEmail;
+	console.log(email);
+
+	data.rsvp.push(email);
+
+	res.send(email);
+}
